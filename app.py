@@ -18,6 +18,10 @@ app.layout = html.Div([
         columns=[{"name": col, "id": col} for col in df.columns],
         data=df.to_dict("records"),
 
+        # Enable Excel export
+        export_format="xlsx",  # Adds an "Export" button for XLSX download
+        export_headers="display",  # Uses display names in the exported file
+
         # Filtering & Sorting
         filter_action="native",
         sort_action="native",
@@ -29,7 +33,7 @@ app.layout = html.Div([
 
         # Scroll with fixed header
         fixed_rows={"headers": True},
-        style_table={"overflowX": "auto", "maxHeight": "1000px", "overflowY": "scroll"},
+        style_table={"overflowX": "auto", "maxHeight": "2000px", "overflowY": "scroll"},
 
         # Default column style
         style_cell={
