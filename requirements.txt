@@ -2,4 +2,4 @@ pandas
 dash
 plotly
 threading
-os
+gunicorn
